@@ -6,12 +6,8 @@ import time
 import random
 import game_scenes
 
-
-# additional components from https://extras.streamlit.app/
-
-# -------------- app config ---------------
-
 st.set_page_config(page_title="StreamlitLand Adventure RPG", page_icon="🐲")
+
 
 # define external css
 def local_css(file_name):
@@ -21,9 +17,7 @@ def local_css(file_name):
 
 ###############################################
 #
-#
 #           START VARIABLES DEFINITION
-#
 #
 ################################################
 
@@ -31,8 +25,6 @@ def local_css(file_name):
 start = False
 
 # set session states
-# this is streamlit specific. For more contex please check streamlit documenation
-
 if "health" not in st.session_state:
     st.session_state["health"] = 100
 if "mana" not in st.session_state:
@@ -61,7 +53,6 @@ if "scenes_counter" not in st.session_state:
         "elf_counter": 0,
     }
 
-
 ###############################################
 #
 #
@@ -86,7 +77,6 @@ player_name_container = st.empty()
 player_name_container.text_input(
     "State your name and hit enter to start the game", key="player_name"
 )
-
 
 if st.session_state.player_name != "":
     player_name_container.empty()
@@ -152,17 +142,3 @@ hide_streamlit_style = """
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
-# MainMenu {visibility: hidden;}
-
-# ------------ footer  ---------------------------
-
-st.markdown(
-    f"""
-    <div class="bpad" id="bpad">
-    <a href="https://www.buymeacoffee.com/tomjohn" style="color: grey; text-decoration:none;">
-    <div class="coffee_btn" >
-    <img src="https://raw.githubusercontent.com/TomJohnH/streamlit-game/main/images/coffe.png" style="max-width:20px;margin-right:10px;">
-    Buy me a coffee</a></div></div>""",
-    unsafe_allow_html=True,
-)

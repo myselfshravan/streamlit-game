@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 ###############################################
 #
 #
@@ -24,9 +25,7 @@ def temp_clear():
 # function restarting session state
 # in the future can be used for randomization
 
-
 def restart_session():
-
     st.session_state["health"] = 100
     st.session_state["mana"] = 80
     st.session_state["gold"] = 5

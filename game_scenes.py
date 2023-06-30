@@ -5,15 +5,14 @@ import game_def
 import time
 import random
 
+
 ###############################################
 #
 #               intro Scene
 #
 ################################################
 
-
 def introScene():
-
     # possible actions
     directions = ["left", "right", "south", "help"]
 
@@ -105,9 +104,7 @@ def introScene():
 #
 ################################################
 
-
 def sheepScene():
-
     # possible actions
     directions = ["left", "right", "back", "pet", "help"]
 
@@ -174,7 +171,6 @@ def sheepScene():
             random_gold = random.randint(4, 8)
 
             if st.session_state.sheep_anger < 5:
-
                 st.success(
                     "Sheep goes: streeeeaaamlit and gives you "
                     + str(random_gold)
@@ -197,7 +193,7 @@ def sheepScene():
             if st.session_state.sheep_anger > 5 and st.session_state.sheep_anger < 10:
                 random_number_of_dots = random.randint(3, 20)
                 annoyed_sheep = (
-                    "".join("." for i in range(random_number_of_dots)) + "no"
+                        "".join("." for i in range(random_number_of_dots)) + "no"
                 )
                 st.success(annoyed_sheep)
             if st.session_state.sheep_anger >= 10:
@@ -221,9 +217,7 @@ def sheepScene():
 #
 ################################################
 
-
 def caveScene():
-
     # possible actions
     directions = ["up", "back", "help"]
 
@@ -305,7 +299,6 @@ def caveScene():
 
 
 def poScene():
-
     # possible actions
     directions = ["left", "right", "back", "buy", "help"]
 
@@ -389,7 +382,6 @@ def poScene():
 
 
 def dragonScene():
-
     # possible actions
     directions = ["fight", "up", "back", "help"]
 
@@ -469,8 +461,8 @@ def dragonScene():
                     st.success("Dragon loses " + str(damage) + " HP")
 
                     st.session_state["dragon_hp"] = st.session_state[
-                        "dragon_hp"
-                    ] - random.randint(0, damage)
+                                                        "dragon_hp"
+                                                    ] - random.randint(0, damage)
 
                     damage = random.randint(0, 8)
                     st.success(
@@ -514,7 +506,6 @@ def dragonScene():
 
 
 def southpathScene():
-
     scene_identifier = "southpath"
 
     # possible actions
@@ -599,7 +590,6 @@ def southpathScene():
 
 
 def elfScene():
-
     scene_identifier = "elf"
 
     # possible actions
@@ -691,7 +681,6 @@ def elfScene():
 
 
 def libraryScene():
-
     # possible actions
     directions = ["left", "right"]
 
@@ -707,7 +696,4 @@ def libraryScene():
         unsafe_allow_html=True,
     )
     st.success("Thank you for playing SteamlitLand Adventure RPG!")
-    st.info("If you liked the game you can like ❤️ the community post and share it 🙂")
     st.info("Credits: Created by @TomJohn")
-    st.info("Top players: knight @Courtland_Goldengate")
-    st.caption("beta version")

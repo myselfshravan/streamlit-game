@@ -154,3 +154,7 @@ audio::-webkit-media-controls-play-button,
 audio::-webkit-media-controls-timeline {
     /* background: white; */
 }
+
+.block-container {
+    padding: 2rem 1rem 6rem !important;
+}
